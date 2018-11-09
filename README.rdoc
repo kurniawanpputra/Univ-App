@@ -13,4 +13,4 @@
 
 ==DEPLOYMENT
 * This project is already online and still in development
-* Can be accessed at nutrismart.herokuapp.com
+* Can be accessed at techuniv.herokuapp.com
