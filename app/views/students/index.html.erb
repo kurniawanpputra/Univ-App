@@ -1,0 +1,20 @@
+<h1 align="center" class="title">Students</h1>
+
+<br/>
+
+<div class="row" align="center">
+  <% @students.each do |student| %>
+    <div class="col-md-4">
+      <div class="list-group">
+        <p class="list-group-item active">
+          <b>Name: <%= student.name %></b>
+        </p>
+        <p class="list-group-item"><b>Email:</b> <%= student.email %></p>
+        <p class="list-group-item"><b>Course Enrollments:</b> N/A</p>
+        <p class="list-group-item">
+          <%= link_to 'View Profile', student_path(student), class: "btn btn-success btn-sm" %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</div>

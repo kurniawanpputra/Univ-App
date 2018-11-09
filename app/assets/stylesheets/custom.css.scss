@@ -1,0 +1,25 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+body{
+  font-family: 'Raleway', sans-serif;
+}
+#ft-text{
+  text-align: center;
+  color: #777;
+}
+
+hr{ margin-top: 10px; }
+
+.title{ margin: 10px 0; }
+
+#logo{
+  color: #337ab7;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+.jumbotron{
+  background-color: #337ab7;
+  color: #fff;
+}

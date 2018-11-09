@@ -1,0 +1,19 @@
+<h1 align="center" class="title">Student Profile</h1>
+
+<br/>
+
+<div class="row" align="center">
+  <div class="col-md-offset-3 col-md-6">
+    <div class="list-group">
+      <p class="list-group-item active">
+        <b>Name: <%= @student.name %></b>
+      </p>
+      <p class="list-group-item"><b>Email:</b> <%= @student.email %></p>
+      <p class="list-group-item"><b>Course Enrollments:</b> N/A</p>
+      <p class="list-group-item">
+        <!--<%= link_to 'Edit Profile', edit_student_path(@student), class: "btn btn-primary btn-sm" %>-->
+        <%= link_to 'Go Back', students_path, class: "btn btn-success btn-sm" %>
+      </p>
+    </div>
+  </div>
+</div>

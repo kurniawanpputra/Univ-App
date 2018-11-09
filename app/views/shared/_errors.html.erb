@@ -1,0 +1,14 @@
+<% if obj.errors.any? %>
+  <div class="container">
+    <div class="row">
+      <div class="well col-sm-offset-3 col-sm-6">
+        <span class="text-danger">
+          <strong><%= pluralize(obj.errors.count, "error") %> occured:</strong><br/>
+          <% obj.errors.full_messages.each do |msg| %>
+            > <%= msg %><br/>
+          <% end %>
+        </span>
+      </div>
+    </div>
+  </div>
+<% end %>
