@@ -6,6 +6,6 @@ class CoursesController < ApplicationController
   end
   
   def enrollments
-    
+    @student = current_user
   end
 end

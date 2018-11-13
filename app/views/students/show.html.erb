@@ -10,7 +10,15 @@
       </p>
       <p class="list-group-item">Email: <%= @student.email %></p>
       <p class="list-group-item">Date Registered: <%= @student.created_at.to_date %></p>
-      <p class="list-group-item">Course Enrollments: CS111 (Essential)</p>
+      <p class="list-group-item">Course Enrollments: 
+        <% if @student.courses.empty? %>
+            N/A
+          <% else %>
+            <% @student.courses.each do |course| %>
+              <%= course.name %>.
+            <% end %>
+          <% end %>
+      </p>
       <p class="list-group-item">
         <!--<%= link_to 'Edit Profile', edit_student_path(@student), class: "btn btn-primary btn-sm" %>-->
         <%= link_to 'Go Back', students_path, class: "btn btn-success btn-sm" %>

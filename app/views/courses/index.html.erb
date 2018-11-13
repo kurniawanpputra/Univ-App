@@ -4,18 +4,29 @@
 
 <div class="row" align="center">
   <% @courses.each do |course| %>
-    <div class="col-md-4">
-      <div class="list-group">
-        <p class="list-group-item active">
-          <b>Code: <%= course.short_name %></b>
-        </p>
-        <p class="list-group-item">Course Name: <%= course.name %></p>
-        <p class="list-group-item">Description: <%= course.description %></p>
-        <p class="list-group-item">
-          <a href="#" class="btn btn-primary btn-sm">Enroll</a>
-          <a href="#" class="btn btn-success btn-sm">View Info</a>
-        </p>
+    <% if logged_in? && (!current_user.courses.include?(course)) %>
+      <div class="col-md-4">
+        <div class="list-group">
+          <p class="list-group-item active">
+            <b>Code: <%= course.short_name %></b>
+          </p>
+          <p class="list-group-item">Course Name: <%= course.name %></p>
+          <p class="list-group-item">Description: <%= course.description %></p>
+          <p class="list-group-item">
+            <%= link_to 'Enroll Course', course_enroll_path(course_id: course.id), method: :post, class: "btn btn-success btn-sm" %>
+          </p>
+        </div>
       </div>
-    </div>
+    <% elsif !logged_in? %>
+      <div class="col-md-4">
+        <div class="list-group">
+          <p class="list-group-item active">
+            <b>Code: <%= course.short_name %></b>
+          </p>
+          <p class="list-group-item">Course Name: <%= course.name %></p>
+          <p class="list-group-item">Description: <%= course.description %></p>
+        </div>
+      </div>
+    <% end %>
   <% end %>
 </div>

@@ -10,9 +10,9 @@
           <b>Name: <%= student.name %></b>
         </p>
         <p class="list-group-item">Email: <%= student.email %></p>
-        <p class="list-group-item">Course Enrollments: CS111 (Essential)</p>
+        <p class="list-group-item">Date Registered: <%= student.created_at.to_date %></p>
         <p class="list-group-item">
-          <%= link_to 'View Profile', student_path(student), class: "btn btn-success btn-sm" %>
+          <%= link_to 'View Details', student_path(student), class: "btn btn-success btn-sm" %>
         </p>
       </div>
     </div>
