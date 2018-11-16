@@ -13,14 +13,13 @@
       <p class="list-group-item">Course Enrollments: 
         <% if @student.courses.empty? %>
             N/A
-          <% else %>
-            <% @student.courses.each do |course| %>
-              <%= course.name %>.
-            <% end %>
+        <% else %>
+          <% @student.courses.each_with_index do |course, index| %>
+            <b><%= index+1 %>.</b> <%= course.name %>
           <% end %>
+        <% end %>
       </p>
       <p class="list-group-item">
-        <!--<%= link_to 'Edit Profile', edit_student_path(@student), class: "btn btn-primary btn-sm" %>-->
         <%= link_to 'Go Back', students_path, class: "btn btn-success btn-sm" %>
       </p>
     </div>
