@@ -5,7 +5,7 @@
         <span class="text-danger">
           <strong><%= pluralize(obj.errors.count, "error") %> occured:</strong><br/>
           <% obj.errors.full_messages.each_with_index do |msg, index| %>
-            <%= index %>. <%= msg %><br/>
+            <%= index+1 %>. <%= msg %><br/>
           <% end %>
         </span>
       </div>
