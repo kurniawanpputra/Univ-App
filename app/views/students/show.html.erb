@@ -1,25 +1,25 @@
-<h1 align="center" class="title">Student Profile</h1>
+<h1 align="center" class="title">Student Details</h1>
 
 <br/>
 
-<div class="row" align="center">
-  <div class="col-md-offset-3 col-md-6">
+<div class="row">
+  <div class="col-md-offset-4 col-md-4">
     <div class="list-group">
-      <p class="list-group-item active">
+      <p class="list-group-item active" align="center">
         <b>Name: <%= @student.name %></b>
       </p>
       <p class="list-group-item">Email: <%= @student.email %></p>
       <p class="list-group-item">Date Registered: <%= @student.created_at.to_date %></p>
-      <p class="list-group-item">Course Enrollments: 
+      <p class="list-group-item">Course Enrollments:<br/>
         <% if @student.courses.empty? %>
             N/A
         <% else %>
           <% @student.courses.each_with_index do |course, index| %>
-            <b><%= index+1 %>.</b> <%= course.name %>
+            <%= index+1 %>. <%= course.name %><br/>
           <% end %>
         <% end %>
       </p>
-      <p class="list-group-item">
+      <p class="list-group-item" align="center">
         <%= link_to 'Go Back', students_path, class: "btn btn-success btn-sm" %>
       </p>
     </div>
